@@ -3,7 +3,6 @@ const questionTwoItems = document.querySelectorAll("#questionTwo > ul >li");
 const questionThreeItems = document.querySelectorAll("#questionThree > ul >li");
 const questionFourItems = document.querySelectorAll("#questionFour > ul >li");
 const questionFiveItems = document.querySelectorAll("#questionFive > ul >li");
-const questionTwo = document.querySelector("#questionTwo");
 const motionState = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 window.addEventListener("load", (event) => {
