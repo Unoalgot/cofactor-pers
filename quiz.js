@@ -25,7 +25,7 @@ window.addEventListener("load", (event) => {
 
 $("#quiz-form").submit(function () {
 return false;  
-function getCharacter();
+function getCharacter()
 });
 
 function respectMotionPreference(e) {
