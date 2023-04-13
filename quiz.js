@@ -77,6 +77,7 @@ function getCharacter() {
   );
   const answerFive = Number(
     document.querySelector('input[name="five"]:checked').value
+  );  
 
   fetch("https://unoalgot.autocode.dev/cofactor@dev/", {
     method: "POST",
