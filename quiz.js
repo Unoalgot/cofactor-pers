@@ -24,8 +24,8 @@ window.addEventListener("load", (event) => {
 });
 
 $("#quiz-form").submit(function () {
-return false;
-function getCharacter();
+  function getCharacter();
+  return false;
 });
 
 function respectMotionPreference(e) {
