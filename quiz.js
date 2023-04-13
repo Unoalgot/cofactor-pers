@@ -103,7 +103,7 @@ function getCharacter() {
         data.fields.resultDescription;
       document.querySelector("#resultImage").src = data.fields.resultImage;
     })
-    .catch(function writeError(err) {
+       .catch(function writeError(err) {
       console.log(err);
     })
     .finally(() => {
@@ -111,4 +111,23 @@ function getCharacter() {
       fadeIn(document.querySelector(".results-wrapper"));
       respectMotionPreference(document.querySelector("#results"));
       document.querySelector(".results-wrapper").setAttribute("tabindex", "-1");
-      document.querySelector
+      document.querySelector(".results-wrapper").focus();
+    });
+}
+
+function fadeOut(e) {
+  e.style.transition = "opacity 0.5s";
+  e.style.opacity = 0;
+  setTimeout(() => {
+    e.style.display = "none";
+  }, 700);
+}
+
+function fadeIn(e) {
+  e.style.opacity = 0;
+  e.style.display = "block";
+  e.style.transition = "opacity 0.5s";
+  setTimeout(() => {
+    e.style.opacity = 1;
+  }, 500);
+}
