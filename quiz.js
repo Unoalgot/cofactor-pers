@@ -92,7 +92,7 @@ function respectMotionPreference(e) {
   if (motionState.matches === true) {
     e.scrollIntoView({ block: "start" });
   } else {
-    e.scrollIntoView({ behavior: "smooth", block: "start" });
+    e.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 }
 
