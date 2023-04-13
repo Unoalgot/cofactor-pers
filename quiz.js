@@ -24,7 +24,67 @@ window.addEventListener("load", (event) => {
 });
 
 $("#quiz-form").submit(function () {
-function getCharacter();
+  respectMotionPreference(document.querySelector("#results"));
+  fadeOut(document.querySelector("#submit"));
+  fadeIn(document.querySelector(".loading-wrapper"));
+
+  const handleError = (response) => {
+    if (!response.ok) {
+      throw Error(`${response.status} ${response.statusText}`);
+    } else {
+      return response.json();
+    }
+  };
+
+  const answerOne = Number(
+    document.querySelector('input[name="one"]:checked').value
+  );
+  const answerTwo = Number(
+    document.querySelector('input[name="two"]:checked').value
+  );
+  const answerThree = Number(
+    document.querySelector('input[name="three"]:checked').value
+  );
+  const answerFour = Number(
+    document.querySelector('input[name="four"]:checked').value
+  );
+  const answerFive = Number(
+    document.querySelector('input[name="five"]:checked').value
+  );  
+
+  fetch("https://unoalgot.autocode.dev/cofactor@dev/", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      answerOne: answerOne,
+      answerTwo: answerTwo,
+      answerThree: answerThree,
+      answerFour: answerFour,
+      answerFive: answerFive,
+    }),
+  })
+    .then(handleError)
+    .then((data) => {
+      console.log(data);
+      document.querySelector("#resultName").innerText = data.fields.resultName;
+      document.querySelector("#resultDescription").innerText =
+        data.fields.resultDescription;
+      document.querySelector("#resultImage").src = data.fields.resultImage;
+    })
+       .catch(function writeError(err) {
+      console.log(err);
+    })
+    .finally(() => {
+      fadeOut(document.querySelector(".loading-wrapper"));
+      fadeIn(document.querySelector(".results-wrapper"));
+      respectMotionPreference(document.querySelector("#results"));
+      document.querySelector(".results-wrapper").setAttribute("tabindex", "-1");
+      document.querySelector(".results-wrapper").focus();
+    });
+  
 return false;
 });
 
