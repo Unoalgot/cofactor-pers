@@ -47,8 +47,10 @@ function toQuestionThree() {
 function toQuestionFour() {
   respectMotionPreference(document.querySelector("#questionFour"));
 }
+
 function toQuestionFive() {
   respectMotionPreference(document.querySelector("#questionFive"));
+}
 
 function getCharacter() {
   respectMotionPreference(document.querySelector("#results"));
@@ -109,24 +111,4 @@ function getCharacter() {
       fadeIn(document.querySelector(".results-wrapper"));
       respectMotionPreference(document.querySelector("#results"));
       document.querySelector(".results-wrapper").setAttribute("tabindex", "-1");
-      document.querySelector(".results-wrapper").focus();
-    });
-}
-
-function fadeOut(e) {
-  e.style.transition = "opacity 0.5s";
-  e.style.opacity = 0;
-  setTimeout(() => {
-    e.style.display = "none";
-  }, 700);
-}
-
-function fadeIn(e) {
-  e.style.opacity = 0;
-  e.style.display = "block";
-  e.style.transition = "opacity 0.5s";
-  setTimeout(() => {
-    e.style.opacity = 1;
-  }, 500);
-}
-}
+      document.querySelector
