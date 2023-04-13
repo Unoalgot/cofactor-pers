@@ -24,8 +24,9 @@ window.addEventListener("load", (event) => {
 });
 
 $("#quiz-form").submit(function () {
+function getCharacter();
 return false;  
-function getCharacter()
+
 });
 
 function respectMotionPreference(e) {
@@ -112,6 +113,5 @@ function getCharacter() {
       respectMotionPreference(document.querySelector("#results"));
       document.querySelector(".results-wrapper").setAttribute("tabindex", "-1");
       document.querySelector
-
-
-
+    }
+    )}
