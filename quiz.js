@@ -24,7 +24,6 @@ window.addEventListener("load", (event) => {
 });
 
 $("#quiz-form").submit(function () {
-  getCharacter ();
 return false;  
 });
 
