@@ -24,7 +24,7 @@ window.addEventListener("load", (event) => {
 });
 
 $("#quiz-form").submit(function () {
-  function getCharacter();
+  function .getCharacter();
   return false;
 });
 
