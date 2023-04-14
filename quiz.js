@@ -77,7 +77,7 @@ $("#quiz-form").submit(function () {
       document.querySelector("#resultDescription").innerText =
         data.fields.resultDescription;
       document.querySelector("#resultImage").src = data.fields.resultImage;
-      document.querySelector("#resultLink").innerText = data.fields.resultLink;
+      document.querySelector("#resultLink").inlineLink = data.fields.resultLink;
     })
        .catch(function writeError(err) {
       console.log(err);
