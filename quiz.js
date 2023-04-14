@@ -21,6 +21,10 @@ window.addEventListener("load", (event) => {
   questionFourItems.forEach((item) => {
     item.addEventListener("click", toQuestionFive);
   });
+  
+  questionFiveItems.forEach((item) => {
+    item.addEventListener("click", toSubmit);
+  });
 });
 
 $("#quiz-form").submit(function () {
@@ -111,6 +115,11 @@ function toQuestionFour() {
 function toQuestionFive() {
   respectMotionPreference(document.querySelector("#questionFive"));
 }
+
+function toSubmit() {
+  respectMotionPreference(document.querySelector("#submit"));
+}
+
 
 function getCharacter() {
   respectMotionPreference(document.querySelector("#results"));
