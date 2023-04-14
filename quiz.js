@@ -77,11 +77,7 @@ $("#quiz-form").submit(function () {
       document.querySelector("#resultDescription").innerText =
         data.fields.resultDescription;
       document.querySelector("#resultImage").src = data.fields.resultImage;
-     const linkElement = document.createElement("a");
-  linkElement.href = data.fields.resultLink;
-  linkElement.innerText = "Lediga tjänster";
-  document.querySelector("#resultLink").innerHTML = data.fields.resultLink;
-  document.querySelector("#resultLink").appendChild(linkElement);
+      document.querySelector("#resultLink").innerHTML = data.fields.resultLink;
     })
        .catch(function writeError(err) {
       console.log(err);
