@@ -77,7 +77,11 @@ $("#quiz-form").submit(function () {
       document.querySelector("#resultDescription").innerText =
         data.fields.resultDescription;
       document.querySelector("#resultImage").src = data.fields.resultImage;
-      document.querySelector("#resultLink").inlineLink = data.fields.resultLink;
+     const linkElement = document.createElement("a");
+  linkElement.href = data.fields.resultLink;
+  linkElement.innerText = "Learn more";
+  document.querySelector("#resultLink").innerHTML = ""; // remove any existing content
+  document.querySelector("#resultLink").appendChild(linkElement);
     })
        .catch(function writeError(err) {
       console.log(err);
